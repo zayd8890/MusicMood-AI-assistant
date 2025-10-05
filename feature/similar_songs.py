@@ -1,7 +1,7 @@
 #imports ........
 
 
-class match_song(input):
+class similar_songs(input):
     '''
     add description
     '''
@@ -9,5 +9,5 @@ class match_song(input):
         self.input = input
         pass
     def main(self):
-        #main logic ---> output: metadata
+        #main logic ---> output: similar songs
         pass
