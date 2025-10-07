@@ -1,2 +1,10 @@
-!pip uninstall -y datasets gradio libcugraph-cu12 pylibcugraph-cu12 pylibraft-cu12 libraft-cu12 rmm-cu12
-!pip install --quiet torch soundfile transformers==4.44.2
+!pip uninstall -y datasets
+!pip uninstall -y gradio
+!pip uninstall -y libcugraph-cu12
+!pip uninstall -y pylibcugraph-cu12
+!pip uninstall -y pylibraft-cu12
+!pip uninstall -y libraft-cu12
+!pip uninstall -y rmm-cu12
+!pip install --quiet torch
+!pip install --quiet soundfile
+!pip install --quiet transformers==4.44.2
