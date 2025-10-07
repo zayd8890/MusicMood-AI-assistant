@@ -1,5 +1,13 @@
 from feature.similar_songs import similar_songs
+import sys
+
 from pathlib import Path
+
+
+sys.path.append(str(Path(__file__).parent.parent))
+
+from feature.similar_songs import similar_songs
+
 
 # paths
 INDEX_PATH = Path("indexes/music_index_openl3")
