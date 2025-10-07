@@ -5,7 +5,7 @@ import librosa
 import numpy as np
 from pathlib import Path
 
-class similar_songs:
+class similar_songs: 
     def __init__(self, audio_path):
         self.audio_path = audio_path
         self.index = None
@@ -15,7 +15,14 @@ class similar_songs:
     def load_index(self, index_path, metadata_path):
         self.index = faiss.read_index(str(index_path))
         with open(metadata_path, "rb") as f:
-            self.metadata = pickle.load(f)
+            data = pickle.load(f)
+
+        # Handle the wrapped structure
+        if isinstance(data, dict) and "metadata" in data:
+            self.metadata = data["metadata"]
+        else:
+            self.metadata = data
+
 
     def extract_embedding(self, filepath):
         audio, sr = librosa.load(filepath, sr=22050, mono=True, duration=30.0)

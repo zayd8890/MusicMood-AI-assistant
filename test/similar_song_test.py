@@ -1,18 +1,17 @@
-from feature.similar_songs import similar_songs
 import sys
 
 from pathlib import Path
 
 
-sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from feature.similar_songs import similar_songs
 
 
 # paths
-INDEX_PATH = Path("indexes/music_index_openl3")
-METADATA_PATH = Path("metadata/songs_metadata.pkl")
-TEST_AUDIO = "test_songs/my_song.mp3"
+INDEX_PATH = Path(r"indexes\music_index_openl3.faiss")
+METADATA_PATH = Path(r"indexes\music_index_openl3.pkl")
+TEST_AUDIO = r"test_audio\blues.00000.wav"
 
 # create object
 reco = similar_songs(TEST_AUDIO)
